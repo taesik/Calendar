@@ -63,15 +63,12 @@ function load() {
     const daySquare = document.createElement('div');
     daySquare.classList.add('day');
 
-    let dayOfWeek = new Date(i-paddingDays).getDay();
-    let isWeekend = (dayOfWeek === 6) || (dayOfWeek  === 0); // 6 = Saturday, 0 = Sunday
     const dayString =
        `${month + 1}/${i - paddingDays}/${year}`;
 
     if (i > paddingDays) {
       //TODO red on weekends
       daySquare.innerText = (i - paddingDays).toString();
-      if(isWeekend) daySquare.className = 'weekend';
       const eventForDay = events.find(e => e.date === dayString);
 
       if (i - paddingDays === day && nav === 0) {
